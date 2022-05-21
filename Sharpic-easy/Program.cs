@@ -6,10 +6,21 @@
         {
             Console.WriteLine("Давай поболтаем!");
             bool continueWait = true;
+            Sharpic bot = new Sharpic(PrintAnswer);
             while (continueWait) 
             {
-                continueWait = ChatMethods.FindAnswer(Console.ReadLine());
+                continueWait = bot.FindReply(Console.ReadLine());
             }
+            Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Метод передается боту для обработки ответа
+        /// </summary>
+        /// <param name="answer">полученный ответ</param>
+        static void PrintAnswer(string answer)
+        {
+            Console.WriteLine(answer);
         }
     }
 }

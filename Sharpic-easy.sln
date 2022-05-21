@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpic-easy", "Sharpic-easy\Sharpic-easy.csproj", "{35FDDC67-2F42-4135-855E-477B3ABBBBFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharpic-easy", "Sharpic-easy\Sharpic-easy.csproj", "{35FDDC67-2F42-4135-855E-477B3ABBBBFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A43A9CFE-2E82-45C6-8E6A-957D72371002}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
