@@ -1,16 +1,16 @@
 ﻿namespace Sharpic_easy.Models
 {
-    internal class Message
+    public class Message
     {
-        internal Message(int id, string? messageType, string? messageText)
+        public Message(int id, string? messageType, string? messageText)
         {
             Id = id;
             MessageType = messageType;
             MessageText = messageText;
         }
 
-        internal int Id { get; set; }
-        internal string? MessageType { get; set; }
-        internal string? MessageText { get; set; }
+        public int Id { get; set; }
+        public string? MessageType { get; set; }
+        public string? MessageText { get; set; }
     }
 }

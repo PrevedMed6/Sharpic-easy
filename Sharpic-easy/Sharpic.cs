@@ -1,19 +1,21 @@
 ﻿using Sharpic_easy.Enums;
+using Sharpic_easy.Interfaces;
 using Sharpic_easy.Models;
 using Sharpic_easy.Repositories;
 
 namespace Sharpic_easy
 {
-    internal class Sharpic
+    public class Sharpic
     {
         #region fields
-        internal delegate void EnterHandler(string message);
-        internal event EnterHandler? Reply;
-        internal Sharpic(EnterHandler enterHandler) {
-            Reply += enterHandler;
+        public delegate void EnterHandler(string message);
+        public event EnterHandler? Reply;
+        public Sharpic(IMessageRepo messageRepo, IReplyRepo replyRepo) {
+            _messageRepo = messageRepo;
+            _replyRepo = replyRepo;
         }
-        private static readonly FakeMessageRepo messageRepo = new FakeMessageRepo();
-        private static readonly FakeReplyRepo replyRepo = new FakeReplyRepo();
+        private static IMessageRepo _messageRepo;
+        private static IReplyRepo _replyRepo;
         private const string NoReply = "Ой, ты меня запутал....";
 
         private static readonly Dictionary<string, Func<string>> replyMethods = new Dictionary<string, Func<string>>()
@@ -70,14 +72,14 @@ namespace Sharpic_easy
         }
         private static string GetRandomReply(string phraseType)
         {
-            List<Reply> replies = replyRepo.GetByType(phraseType);
+            List<Reply> replies = _replyRepo.GetByType(phraseType);
             var rnd = new Random();
             rnd.Next(replies.Count);
             return replies.ElementAt(rnd.Next(replies.Count))?.ReplyMessage ?? NoReply;
         }
         private string GetPhraseType(string enteredWord)
         {
-            return messageRepo.GetTypeByPart(enteredWord);
+            return _messageRepo.GetTypeByPart(enteredWord);
         }
         #endregion
     }

@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Sharpic_easy.Models
 {
-    internal class Reply
+    public class Reply
     {
-        internal Reply (int id, string? replyType, string? replyMessage)
+        public Reply (int id, string? replyType, string? replyMessage)
         {
             Id = id;
             ReplyType = replyType;
             ReplyMessage = replyMessage;
         }
 
-        internal int Id { get; set; }
-        internal string? ReplyType { get; set; }
-        internal string? ReplyMessage { get; set; }
+        public int Id { get; set; }
+        public string? ReplyType { get; set; }
+        public string? ReplyMessage { get; set; }
     }
 }

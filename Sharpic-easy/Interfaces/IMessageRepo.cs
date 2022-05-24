@@ -2,7 +2,7 @@
 
 namespace Sharpic_easy.Interfaces
 {
-    internal interface IMessageRepo
+    public interface IMessageRepo
     {
         /// <summary>
         /// Вернуть тип запроса к боту

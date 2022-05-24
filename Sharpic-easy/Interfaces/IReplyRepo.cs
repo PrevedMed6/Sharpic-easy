@@ -2,7 +2,7 @@
 
 namespace Sharpic_easy.Interfaces
 {
-    internal interface IReplyRepo
+    public interface IReplyRepo
     {
         /// <summary>
         /// Взять ответы по типу

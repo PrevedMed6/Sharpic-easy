@@ -4,7 +4,7 @@ using Sharpic_easy.Models;
 
 namespace Sharpic_easy.Repositories
 {
-    internal class FakeMessageRepo : IMessageRepo
+    public class FakeMessageRepo : IMessageRepo
     {
         public string GetTypeByPart(string message)
         {
