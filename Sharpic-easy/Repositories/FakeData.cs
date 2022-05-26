@@ -3,7 +3,7 @@ using Sharpic_easy.Models;
 
 namespace Sharpic_easy.Repositories
 {
-    internal static class FakeData
+    public static class FakeData
     {
         static List<Message> _messages = new List<Message>()
         {
@@ -41,14 +41,14 @@ namespace Sharpic_easy.Repositories
             new Reply(13, PhraseTypesEnum.aphorism.ToString(), "Счастье - это когда тебя понимают")
         };
 
-        internal static List<Message> Messages 
+        public static List<Message> Messages 
         { 
             get
             { 
                 return _messages;
             } 
         }
-        internal static List<Reply> Replies
+        public static List<Reply> Replies
         {
             get
             {

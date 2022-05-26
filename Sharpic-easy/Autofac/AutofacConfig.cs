@@ -9,9 +9,9 @@ namespace Sharpic_easy.Autofac
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<Sharpic>();
-            builder.RegisterType<FakeMessageRepo>().As<IMessageRepo>();
-            builder.RegisterType<FakeReplyRepo>().As<IReplyRepo>();
+            builder.RegisterType<Sharpic>().SingleInstance();
+            builder.RegisterType<FileMessageRepo>().As<IMessageRepo>().SingleInstance();
+            builder.RegisterType<FileReplyRepo>().As<IReplyRepo>().SingleInstance();
             return builder.Build();
         }
     }

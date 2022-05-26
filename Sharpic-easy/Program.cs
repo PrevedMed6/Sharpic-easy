@@ -8,12 +8,11 @@ namespace Sharpic_easy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Давай поболтаем!");
+            PrintAnswer("Давай поболтаем!");
             bool continueWait = true;
             var container = AutofacConfig.ConfigureContainer();
             Sharpic? bot = container.Resolve<Sharpic>();
             bot.Reply += PrintAnswer;
-            //Sharpic bot = new Sharpic(PrintAnswer,new FakeMessageRepo(),new FakeReplyRepo());
             while (continueWait) 
             {
                 continueWait = bot.FindReply(Console.ReadLine());
@@ -23,7 +22,10 @@ namespace Sharpic_easy
 
         static void PrintAnswer(string answer)
         {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(answer);
+            Console.ResetColor();
         }
     }
 }
